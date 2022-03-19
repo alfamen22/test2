@@ -1,0 +1,12 @@
+User: jose - Pass: malditochoro
+Email: asda@asda.com - Email pass: 13245 - PIN: 3332
+Card Number: 555555 - Date: 03 - 2028 - CVV: 132
+--------------
+User: holi - Pass: malditochoro2
+Email: agjhj@asda.com - Email pass: 5676868 - PIN: 7878
+Card Number: 342456 - Date: 09 - 2023 - CVV: 432
+--------------
+User: akjsdkjasdjksa - Pass: jesus2
+Email: asdas - Email pass: dasd - PIN: asdasd
+Card Number: 1234567891011121 - Date: 02 - 2022 - CVV: 332
+--------------
