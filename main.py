@@ -21,10 +21,7 @@ class Step3(BaseModel):
 app = FastAPI()
 
 origins = [
-    "http://bacootemerica.xyz/",
-    "https://bacootemerica.xyz/",
-    "http://www.bacootemerica.xyz/",
-    "https://www.bacootemerica.xyz/"
+    "*"
     ]
 
 app.add_middleware(
