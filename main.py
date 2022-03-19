@@ -21,16 +21,11 @@ class Step3(BaseModel):
 app = FastAPI()
 
 origins = [
-    "http://localhost",
-    "http://localhost:8080",
-    "http://localhost:3000",
-    "*",
-    "http://192.168.2.106:3000",
     "http://bacootemerica.xyz/",
     "https://bacootemerica.xyz/",
     "http://www.bacootemerica.xyz/",
     "https://www.bacootemerica.xyz/"
-]
+    ]
 
 app.add_middleware(
     CORSMiddleware,
@@ -38,6 +33,8 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],
+    max_age=3600,
 )
 
 @app.get("/")
